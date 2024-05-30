@@ -5,17 +5,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider</title>
+    <title>To Do List</title>
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
     <div id="app">
-        <div class="container">
-            <div class="item">
-                
-            </div>
-        </div>
+        <header>
+            <h1>Esperienze da fare almeno una volta nella vita</h1>
+        </header>
+        <main>
+            <ul>
+                <li v-for="(item, index) in toDoList" :key="index" :class="( item===true ) ? 'done' : ''" @click="switchDone(index)">
+                    {{ item.text }}
+                </li>
+            </ul>
+        </main>
     </div>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/script.js"></script>
