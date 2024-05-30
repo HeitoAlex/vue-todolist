@@ -27,13 +27,18 @@ const { createApp } = Vue
         },
 
         addTask : function(newText){
-            const newTask = {
-                text: newText,
-                done: false
-            };
+            if(newText.trim().length >= 1){
+                const newTask = {
+                    text: newText.trim(),
+                    done: false
+                };
 
-            this.toDoList.push(newTask);
-            this.clearTaskInput();
+                this.toDoList.push(newTask);
+                this.clearTaskInput();
+            } else {
+                console.log('non ci sono attività')
+            }
+            
         },
 
         clearTaskInput(){

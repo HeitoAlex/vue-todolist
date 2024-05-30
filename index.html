@@ -16,7 +16,7 @@
             <h1>Esperienze da fare almeno una volta nella vita</h1>
         </header>
         <main>
-            <ul>
+            <ul v-if="toDoList.length >= 1">
                 <li v-for="(item, index) in toDoList" :key="index" >
                     <span :class="( item===true ) ? 'done' : ''" @click="switchDone(index)">
                         {{ item.text }}
@@ -24,6 +24,9 @@
                     <i class="fa-regular fa-circle-xmark" @click="deleteTask(index)"></i>
                 </li>
             </ul>
+            <p v-else>
+                “Sappiamo cosa deve essere fatto: tutto ciò che manca è la volontà di farlo.”
+            </p>
         </main>
         <footer>
             <label for="new-task">Aggiungi attività, ma non essere banale</label>
