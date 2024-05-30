@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <!-- Fontawesome 6.5.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -14,14 +17,18 @@
         </header>
         <main>
             <ul>
-                <li v-for="(item, index) in toDoList" :key="index" :class="( item===true ) ? 'done' : ''" @click="switchDone(index)">
-                    {{ item.text }}
+                <li v-for="(item, index) in toDoList" :key="index" >
+                    <span :class="( item===true ) ? 'done' : ''" @click="switchDone(index)">
+                        {{ item.text }}
+                    </span>
+                    <i class="fa-regular fa-circle-xmark" @click="deleteTask(index)"></i>
                 </li>
             </ul>
         </main>
         <footer>
             <label for="new-task">Aggiungi attività, ma non essere banale</label>
             <input type="text" id="new-todo" v-model="newTaskText" @keyup.enter="addTask(newTaskText)">
+            <button @click="addTask(newTaskText)">Aggiungi</button>
         </footer>
     </div>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
