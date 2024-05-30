@@ -17,8 +17,8 @@ const { createApp } = Vue
                     text: 'Discutere di filosofia con Satana',
                     done: false
                 }
-            ]
-
+            ],
+            newTaskText: '',
         }
     },
     methods: {
@@ -26,6 +26,18 @@ const { createApp } = Vue
             this.toDoList[itemIndex].done = !this.toDoList[itemIndex].done;
         },
 
-        
+        addTask : function(newText){
+            const newTask = {
+                text: newText,
+                done: false
+            };
+
+            this.toDoList.push(newTask);
+            this.clearTaskInput();
+        },
+
+        clearTaskInput(){
+            this.newTaskText = '';
+        }
     }
     }).mount('#app')
