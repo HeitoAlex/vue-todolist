@@ -22,7 +22,7 @@ const { createApp } = Vue
         }
     },
     methods: {
-        switchDone : function(itemIndex){
+        switchDone: function(itemIndex){
             this.toDoList[itemIndex].done = !this.toDoList[itemIndex].done;
         },
 
@@ -38,6 +38,10 @@ const { createApp } = Vue
 
         clearTaskInput(){
             this.newTaskText = '';
+        },
+
+        deleteTask: function(taskIndex){
+            this.toDoList.splice(taskIndex, 1);
         }
     }
     }).mount('#app')
