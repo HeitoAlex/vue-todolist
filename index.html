@@ -21,6 +21,10 @@
                 </li>
             </ul>
         </main>
+        <footer>
+            <label for="new-task">Aggiungi attività, ma non essere banale</label>
+            <input type="text" id="new-todo" v-model="newTaskText" @keyup.enter="addTask(newTaskText)">
+        </footer>
     </div>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/script.js"></script>
