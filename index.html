@@ -18,7 +18,7 @@
         <main>
             <ul v-if="toDoList.length >= 1">
                 <li v-for="(item, index) in toDoList" :key="index" >
-                    <span :class="( item===true ) ? 'done' : ''" @click="switchDone(index)">
+                    <span :class="( item.done===true ) ? 'done' : ''" @click="switchDone(index)">
                         {{ item.text }}
                     </span>
                     <i class="fa-regular fa-circle-xmark" @click="deleteTask(index)"></i>

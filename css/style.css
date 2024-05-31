@@ -5,6 +5,6 @@
 }
 
 
-ul li.done{
+ul li span.done{
     text-decoration: line-through;
 }
