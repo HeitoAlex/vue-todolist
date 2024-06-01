@@ -4,7 +4,58 @@
     box-sizing: border-box;
 }
 
+body{
+    height: 100vh;
+    background-color: beige;
+    display: flex;
+}
+
+aside {
+    height: 100vh;
+    width: calc(100vw - 75%);
+    background-image: url(../img/wizard.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+div#app {
+    width: calc(100vw - 50%);
+    
+}
+
+header,
+main,
+footer {
+    margin: 1.5rem auto;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    
+}
+
+ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: .75rem;
+    border-radius: .75rem;
+    color: green;
+}
+
+li>i {
+    color: darkorange;
+}
 
 ul li span.done{
     text-decoration: line-through;
+    color: red;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
 }
