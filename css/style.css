@@ -16,6 +16,7 @@ aside {
     background-image: url(../img/wizard.png);
     background-size: contain;
     background-repeat: no-repeat;
+    margin-top: 2rem;
 }
 div#app {
     width: calc(100vw - 50%);
@@ -41,8 +42,14 @@ ul li{
     align-items: center;
     font-size: 2rem;
     margin-bottom: .75rem;
-    border-radius: .75rem;
+    
+}
+
+ul li span {
+    border-radius: 1rem;
     color: green;
+    border: 1px solid green;
+    padding: .75rem;
 }
 
 li>i {
@@ -51,11 +58,28 @@ li>i {
 
 ul li span.done{
     text-decoration: line-through;
+    border-radius: 1rem;
     color: red;
+    border: 1px solid red;
+    padding: .75rem;
 }
 
 footer {
     display: flex;
     justify-content: space-around;
     font-size: 1.5rem;
+    flex-wrap: wrap;
+}
+
+input {
+    margin: 0 1rem;
+}
+
+button {
+    background-color: coral;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 25px;
+    margin-top: 1.5rem;
+
 }
